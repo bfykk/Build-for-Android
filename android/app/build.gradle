@@ -11,7 +11,8 @@ if (flutterRoot == null) {
     throw new GradleException("Flutter SDK not found.")
 }
 
-// 关键！必须引入 Flutter 的 gradle 脚本
+def kotlin_version = "1.7.10"
+
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 apply plugin: 'com.android.application'
@@ -35,9 +36,16 @@ android {
             shrinkResources false
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
-// 关键！必须配置 Flutter 源码路径
 flutter {
     source '../..'
 }

@@ -1,9 +1,6 @@
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
-        // 国内镜像优先，Codemagic 下载更快更稳
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
         google()
         mavenCentral()
     }
@@ -15,8 +12,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
         google()
         mavenCentral()
     }

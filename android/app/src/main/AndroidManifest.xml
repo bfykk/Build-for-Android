@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.music_tool">
 
-    <!-- 你用到的权限 -->
+    <!-- 常用权限，按需保留/删除 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -10,12 +11,11 @@
         android:label="音乐工具"
         android:icon="@mipmap/ic_launcher">
 
-        <!-- 关键！必须加上这一行，启用 v2 embedding -->
+        <!-- 必须：启用 Flutter v2 embedding -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
 
-        <!-- 必须使用 v2 的 Activity -->
         <activity
             android:name="io.flutter.embedding.android.FlutterActivity"
             android:exported="true"
@@ -30,5 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
+
 </manifest>
