@@ -8,20 +8,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # FFmpeg 核心（安卓/iOS 自带，不用自己装）
-  ffmpeg_kit_flutter: ^6.0.3          # 默认 https 版
-  # 要 MP3/视频转码就用 full 版（体积大一点）
-  # ffmpeg_kit_flutter_full: ^6.0.3
-
   path_provider: ^2.1.2
   permission_handler: ^11.0.1
-  cupertino_icons: ^1.0.2
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
+  ffmpeg_kit_flutter: ^6.0.3
 
 flutter:
   uses-material-design: true
