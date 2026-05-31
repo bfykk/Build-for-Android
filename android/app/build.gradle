@@ -8,35 +8,25 @@ if (localPropertiesFile.exists()) {
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw new GradleException("Flutter SDK not found.")
 }
 
-def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
-if (flutterVersionCode == null) flutterVersionCode = '1'
-
-def flutterVersionName = localProperties.getProperty('flutter.versionName')
-if (flutterVersionName == null) flutterVersionName = '1.0'
-
-// 必须加这行：引入 Flutter 的 gradle 脚本
+// 关键！必须引入 Flutter 的 gradle 脚本
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.example.music_tool"  // 必须和 Manifest package 一致
+    namespace "com.example.music_tool"
     compileSdk 33
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
 
     defaultConfig {
         applicationId "com.example.music_tool"
         minSdk 21
         targetSdk 33
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
@@ -47,8 +37,9 @@ android {
     }
 }
 
+// 关键！必须配置 Flutter 源码路径
 flutter {
-    source '../..'  // 必须有，告诉 Flutter 项目根目录
+    source '../..'
 }
 
 dependencies {
