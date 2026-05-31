@@ -14,18 +14,17 @@ if (flutterRoot == null) {
 def kotlin_version = "1.7.10"
 
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
     namespace "com.example.music_tool"
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.music_tool"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
